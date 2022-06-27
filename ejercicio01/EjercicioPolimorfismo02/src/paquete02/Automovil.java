@@ -9,6 +9,45 @@ package paquete02;
  *
  * @author reroes
  */
-public class Automovil {
+public abstract class Automovil {
+   
+ protected String nombrePropietario;
+ protected String placa;
+ protected double valoraCancelar;
+ 
+ public void establecerNombre(String nombre){
+     nombrePropietario = nombre;
+     
+ }
     
+ public void establecerPlaca(String plac){
+     placa = plac;
+     
+ }   
+     
+ public abstract  void calcularValoraCancelar();
+ 
+ public String obtenerNombrePropietario(){
+     return  nombrePropietario;
+ }
+ 
+ public String obtenerPlaca(){
+     return placa;
+ }
+ 
+ public double obtenervalorCancelar(){
+     return valoraCancelar;
+     
+ }
+ 
+ public String toString() {
+String cadena = String.format("Nombre del propietario: %s\n"
++ "Placa del auto: %s\n",
+nombrePropietario, placa);
+return cadena;
 }
+ 
+}
+    
+
+/

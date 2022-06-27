@@ -19,6 +19,7 @@ public class Ejecutor2 {
         double pasajeFijo = 0.4;
         
         /*
+        
         Generar un proceso que permita iterar los arreglos; el objetivo es 
         crear objetos de tipo Pasaje Menor de edad, Pasaje Normal, Pasaje 
         Universitario y Pasaje Tercera Edad. Los arreglos tienen una 
@@ -30,9 +31,48 @@ public class Ejecutor2 {
         ¿Cómo saber a que tipo de Pasaje pertenece cada objeto? Usar la edad 
         como discriminatoria.
         
+        menor de edad: mayor o igual a 0 y menor o igual a 18
+        universitario: mayor a 18 y menor o igual a 25
+        normal: mayor a 25 y menor 65
+        tercera edad: mayor o igual a 65
         */
         // inicio de solución
-        
+        for(int i = 0; i < nombres.length; i++){
+            if(edad[i] <= 18){
+                PasajeMenorEdad pa = new PasajeMenorEdad(pasajeFijo);
+                Persona persona1 = new Persona(nombres[i], apellidos[i],
+                edad[i]);
+                pa.establecerPersona(persona1);
+
+            pasajes.add(pa);
+
+            }else if(edad[i] <= 25){
+                PasajeUniversitario pm = new PasajeUniversitario(pasajeFijo);
+                Persona persona1 = new Persona(nombres[i], apellidos[i],
+                edad[i]);
+                pm.establecerPersona(persona1);
+
+            pasajes.add(pm);
+
+            }else if(edad[i] < 65){
+                PasajeNormal pt = new PasajeNormal(pasajeFijo);
+                Persona persona1 = new Persona(nombres[i], apellidos[i],
+                edad[i]);
+                pt.establecerPersona(persona1);
+
+            pasajes.add(pt);
+
+            }else if(edad[i] >= 65){
+                PasajeTerceraEdad pu = new PasajeTerceraEdad(pasajeFijo);
+                Persona persona1 = new Persona(nombres[i], apellidos[i],
+                edad[i]);
+                pu.establecerPersona(persona1);
+
+            pasajes.add(pu);
+
+            }
+
+        }
         
         // fin  de solución
         
